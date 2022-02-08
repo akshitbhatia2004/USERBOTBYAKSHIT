@@ -1,0 +1,48 @@
+
+
+_get_repolink () {
+    local regex
+    regex='(https?)://github.com/.+/.+'
+    if [[ $AKSHIT_REPO == "AKSHITBOT" ]]
+    then
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RoZS1MZWdlbmRCb3QvTEVHRU5EVVNFUkJPVC9hcmNoaXZlL0xlZ2VuZEJvdC56aXA=" | base64 -d
+    elif [[ $AKSHIT_REPO == "AKSHITBOT" ]]
+    then
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RoZS1MZWdlbmRCb3QvTEVHRU5EVVNFUkJPVC9hcmNoaXZlL0xlZ2VuZEJvdC56aXA=" | base64 -d
+    elif [[ $AKSHIT_REPO =~ $regex ]]
+    then
+        if [[ $AKSHIT_REPO_BRANCH ]]
+        then
+            echo "${AKSHIT_REPO}/archive/${AKSHIT_REPO_BRANCH}.zip"
+        else
+            echo "${AKSHIT_REPO}/archive/master.zip"
+        fi
+    else
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RoZS1MZWdlbmRCb3QvTEVHRU5EVVNFUkJPVC9hcmNoaXZlL0xlZ2VuZEJvdC56aXA=" | base64 -d
+    fi
+}
+
+
+_setting_bot () {
+    local zippath
+    zippath="AKSHITBOT.zip"
+    echo "  Downloading AKSHITBOT V3.O Source Code..."
+    wget -q $(_get_repolink) -O "$zippath"
+    echo "  Unpacking Data ..."
+    AKSHITPATH=$(zipinfo -1 "$zippath" | grep -v "/.");
+    unzip -qq "$zippath"
+    echo "Done"
+    echo "  AKSHITBOT V3.O Cleaning.."
+    rm -rf "$zippath"
+    sleep 5
+    cd $AKSHITPATH
+    echo "    ⚜️Starting 彡aͥksͣhͫᎥτ彡⚜️     "
+    echo "
+    🇮🇳🇮🇳🇮🇳🇮🇳🇮🇳🇮🇳🇮🇳🇮🇳🇮🇳🇮🇳
+    "
+
+    python3 ../setup/updater.py ../requirements.txt requirements.txt
+    python3 -m userbot
+}
+
+_setting_bot
