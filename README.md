@@ -75,13 +75,13 @@
 - Install Requirements.
 
 `pip install -U -r requirements.txt`
-- Generate Akshit STRING.
+- Generate AKSHIT STRING.
 
 `python AkshitString.py`
 - Create config.py or rename exampleconfig.py to config.py. Fill All The Required Variables.
 - Finally Start AkshitBot By Vps
 
-`bash ./AkshitBOT/start.sh`
+`bash ./AKSHITBOT/start.sh`
 
 ---------
 
