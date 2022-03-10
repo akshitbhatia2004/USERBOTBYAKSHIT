@@ -81,7 +81,7 @@
 - Create config.py or rename exampleconfig.py to config.py. Fill All The Required Variables.
 - Finally Start AkshitBot By Vps
 
-`bash ./AKSHITBOT/start.sh`
+`bash ./AkshitBot/start.sh`
 
 ---------
 
