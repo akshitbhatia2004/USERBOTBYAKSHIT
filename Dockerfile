@@ -1,5 +1,5 @@
 #Repo Clonning ⚡♥️
-RUN git clone https://github.com/akshitbhatia2004/USERBOT-BY-AKSHIT.git /root/userbot
+RUN git clone https://github.com/akshitbhatia2004/USERBOT-BY-AKSHIT.git/root/userbot
 
 #working directory 
 WORKDIR /root/userbot
