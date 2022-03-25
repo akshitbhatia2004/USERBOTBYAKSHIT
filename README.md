@@ -75,7 +75,7 @@
 - Install Requirements.
 
 `pip install -U -r requirements.txt`
-- Generate AKSHIT STRING.
+- Generate AKSHIT_STRING.
 
 `python AkshitString.py`
 - Create config.py or rename exampleconfig.py to config.py. Fill All The Required Variables.
